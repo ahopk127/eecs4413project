@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Bid</title>
+</head>
+<body>
+    <header>
+        <!-- Change the path to company logo  -->
+        <img src="/path-to-logo/logo.png" alt="Company Logo">
+    </header>
+
+
+    <section>
+        <!-- add description for the item and price-->
+        <h2>Item Description</h2>
+        <p th:text="${item.description}"></p>
+        <p th:text="'Shipping Price: ' + ${item.shippingPrice}"></p>
+        
+        <div>
+            <!--add current price and highest bid-->
+            <h3>Current Price: <span th:text="${item.currentPrice}"></span></h3>
+            <h4>Highest Bidder: <span th:text="${item.highestBidder}"></span></h4>
+        </div>
+
+        <form th:action="@{/bid}" method="POST">
+            <label for="bidPrice">Enter Bid Price:</label>
+            <input type="number" id="bidPrice" name="bidPrice" min="${item.currentPrice + 1}" required>
+            <button type="submit">BID</button>
+        </form>
+    </section>
+
+</body>
+</html>
