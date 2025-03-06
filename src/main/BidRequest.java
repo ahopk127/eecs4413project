@@ -1,5 +1,3 @@
-// BidRequest.java
-package com.auctionapp.model;
 
 public class BidRequest {
     private Long itemId;

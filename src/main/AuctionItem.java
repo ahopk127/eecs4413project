@@ -1,6 +1,4 @@
 
-package com.auctionapp.model;
-
 public class AuctionItem {
     private Long id;
     private String description;
