@@ -3,9 +3,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.auctionapp.model.BidRequest;
-import com.auctionapp.model.AuctionItem;
-import com.auctionapp.service.AuctionService;
+import BidRequest;
+import AuctionItem;
+import AuctionService;
 
 @RestController
 @RequestMapping("/forwardbidding")
