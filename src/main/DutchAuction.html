@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dutch Auction</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; }
+        .container { width: 50%; padding: 20px; border: 1px solid #ccc; border-radius: 10px; margin-top: 50px; }
+        .section { margin-bottom: 20px; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Company Logo</h1>
+    <div class="container">
+        <div class="section">
+            <h2>Item Description</h2>
+            <p>Description: Sample Item</p>
+            <p>Shipping Price: $20.00</p>
+        </div>
+        <div class="section">
+            <h2>Current Price</h2>
+            <p>$200.00</p>
+        </div>
+        <button onclick="buyNow(1)">Buy Now</button>
+    </div>
+
+    <script>
+        async function buyNow(itemId) {
+            const response = await fetch(`/dutch-auction/buy/${itemId}`, { method: 'POST' });
+            const message = await response.text();
+            alert(message);
+        }
+    </script>
+</body>
+</html>
