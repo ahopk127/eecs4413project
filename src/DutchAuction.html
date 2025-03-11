@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dutch Auction</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { display: flex; flex-direction: column; align-items: center; }
+        .content { display: flex; justify-content: flex-end; width: 80%; }
+        .description { margin-right: 20px; }
+        .buy-button { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/logo.png" alt="Company Logo" style="width:100px;">
+        <div class="content">
+            <div class="description">
+                <p th:text="'Description: ' + ${itemDescription}"></p>
+                <p th:text="'Shipping Price: ' + ${shippingPrice}"></p>
+                <p th:text="'Current Price: ' + ${currentPrice}"></p>
+            </div>
+            <form action="/auction/buy-now" method="post">
+                <button type="submit" class="buy-button">Buy Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
